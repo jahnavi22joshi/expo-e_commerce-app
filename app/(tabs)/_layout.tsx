@@ -1,0 +1,19 @@
+import CustomTabBar from 'components/CustomTabBar';
+import { Tabs } from 'expo-router';
+
+export default function TabLayout() {
+  return (
+    <Tabs
+      tabBar={(props) => <CustomTabBar {...props} />}
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Tabs.Screen name="index" />
+      <Tabs.Screen name="Search" />
+      <Tabs.Screen name="Cart" />
+      <Tabs.Screen name="Track" />
+      <Tabs.Screen name="Profile" />
+    </Tabs>
+  );
+}
