@@ -1,5 +1,46 @@
-import { Text } from "react-native";
+import React from 'react';
+import {
+  SafeAreaView,
+  View,
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Cart() {
-  return <Text>Cart</Text>;
-}
+import AppText from 'components/AppText';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import AppButton from 'components/AppButton';
+
+const Cart = () => {
+
+  return (
+    <SafeAreaView className="flex-1 bg-white">
+      <View className="flex-1 items-center self-center justify-center gap-5">
+
+        {/* Cart Illustration */}
+        <MaterialCommunityIcons name="cart-off" size={100} color="black" />
+
+        {/* Heading */}
+        <AppText
+          variant="bold"
+          className="text-[30px] text-center"
+        >
+          Oops...
+        </AppText>
+
+        <AppText
+          variant="bold"
+          className=" text-[30px] text-center"
+        >
+          The cart is empty
+        </AppText>
+
+        {/* Shopping Button */}
+        <View className="self-center mb-10" style={{ width: 200 }}>
+          <AppButton title="Go Shopping" type="outline" />
+        </View>
+
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default Cart;
