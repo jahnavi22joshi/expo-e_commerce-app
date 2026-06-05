@@ -7,6 +7,7 @@ import Divider from 'components/Divider';
 import ProductCard from 'components/ProductCard';
 import TestimonialCard from 'components/TestimonialCard';
 import { TEXT } from 'constants/text';
+import { router } from 'expo-router';
 import React, { useState } from 'react';
 import {
     View,
@@ -66,7 +67,7 @@ export default function Home() {
     const products = [
         {
             id: 1,
-            image: require('../../assets/images/best-sellers/ringPellow.jpg'),
+            image: require('../../assets/images/best-sellers/ringPillow.jpg'),
             title:
                 'Round Ring Pillow',
             rating: 4.6,
@@ -250,7 +251,7 @@ export default function Home() {
                 />
             </View>
 
-            
+
 
             <ScrollView
                 className="flex-1 bg-white"
@@ -391,7 +392,20 @@ export default function Home() {
                             justifyContent: 'space-between',
                         }}
                         renderItem={({ item }) => (
-                            <ProductCard {...item} />
+                            <ProductCard
+                                {...item}
+                                onPress={() => {
+
+                                    router.push({
+                                        pathname: "/product/BestSellerProductDetails",
+                                        params: {
+                                            id: String(item.id),
+                                            title: item.title,
+                                            price: item.price
+                                        },
+                                    });
+                                }}
+                            />
                         )}
                     />
 
@@ -549,9 +563,6 @@ export default function Home() {
                         </AppText>
                     </View>
                 </View>
-
-
-
 
             </ScrollView>
         </View>

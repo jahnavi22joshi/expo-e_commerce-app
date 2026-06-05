@@ -75,7 +75,7 @@ export default function Search() {
   const products = [
     {
       id: 1,
-      image: require('../../assets/images/best-sellers/ringPellow.jpg'),
+      image: require('../../assets/images/best-sellers/ringPillow.jpg'),
       title:
         'Round Ring Pillow',
       rating: 4.6,
