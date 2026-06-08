@@ -1,4 +1,4 @@
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 import AppButton from 'components/AppButton';
 import AppText from 'components/AppText';
 import AuthHeader from 'components/AuthHeader';
@@ -7,7 +7,7 @@ import Divider from 'components/Divider';
 import ProductCard from 'components/ProductCard';
 import TestimonialCard from 'components/TestimonialCard';
 import { TEXT } from 'constants/text';
-import { router } from 'expo-router';
+import { router, useNavigation } from 'expo-router';
 import React, { useState } from 'react';
 import {
     View,
@@ -16,8 +16,12 @@ import {
     TouchableOpacity,
     Dimensions,
     FlatList,
+    Pressable,
+    Text,
 } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
+import { DrawerActions } from "@react-navigation/native";
+import { DrawerNavigationProp } from '@react-navigation/drawer';
 
 export default function Home() {
     const [selectedTab, setSelectedTab] = useState('category');
@@ -26,48 +30,48 @@ export default function Home() {
     const banners = [
         {
             id: 1,
-            image: require('../../assets/images/banners/banner1.jpg'),
+            image: require('../../../assets/images/banners/banner1.jpg'),
         },
         {
             id: 2,
-            image: require('../../assets/images/banners/banner2.jpg'),
+            image: require('../../../assets/images/banners/banner2.jpg'),
         },
         {
             id: 3,
-            image: require('../../assets/images/banners/banner3.jpg'),
+            image: require('../../../assets/images/banners/banner3.jpg'),
         },
     ];
     const categories = [
         {
             id: 1,
             title: 'Ankle',
-            image: require('../../assets/images/category/ankle.jpg'),
+            image: require('../../../assets/images/category/ankle.jpg'),
         },
         {
             id: 2,
             title: 'Back',
-            image: require('../../assets/images/category/back.jpg'),
+            image: require('../../../assets/images/category/back.jpg'),
         },
         {
             id: 3,
             title: 'Chest',
-            image: require('../../assets/images/category/chest.jpg'),
+            image: require('../../../assets/images/category/chest.jpg'),
         },
         {
             id: 4,
             title: 'Knee',
-            image: require('../../assets/images/category/knee.jpg'),
+            image: require('../../../assets/images/category/knee.jpg'),
         },
         {
             id: 5,
             title: 'Wrist',
-            image: require('../../assets/images/category/wrist.jpg'),
+            image: require('../../../assets/images/category/wrist.jpg'),
         },
     ];
     const products = [
         {
             id: 1,
-            image: require('../../assets/images/best-sellers/ringPillow.jpg'),
+            image: require('../../../assets/images/best-sellers/ringPillow.jpg'),
             title:
                 'Round Ring Pillow',
             rating: 4.6,
@@ -76,7 +80,7 @@ export default function Home() {
         },
         {
             id: 2,
-            image: require('../../assets/images/best-sellers/ankle.jpg'),
+            image: require('../../../assets/images/best-sellers/ankle.jpg'),
             title:
                 'Ankle Wrap',
             rating: 4.5,
@@ -85,7 +89,7 @@ export default function Home() {
         },
         {
             id: 3,
-            image: require('../../assets/images/best-sellers/elbow.jpg'),
+            image: require('../../../assets/images/best-sellers/elbow.jpg'),
             title:
                 'Designer Elbow Sleeves',
             rating: 4.8,
@@ -94,7 +98,7 @@ export default function Home() {
         },
         {
             id: 4,
-            image: require('../../assets/images/best-sellers/kneesupport.jpg'),
+            image: require('../../../assets/images/best-sellers/kneesupport.jpg'),
             title:
                 'Knee Flex Pro | Compression Knee Support with Patella Gel Pad',
             rating: 4.6,
@@ -106,32 +110,32 @@ export default function Home() {
         {
             id: 1,
             title: 'Running',
-            image: require('../../assets/images/category/running.jpg'),
+            image: require('../../../assets/images/category/running.jpg'),
         },
         {
             id: 2,
             title: 'Tennis',
-            image: require('../../assets/images/category/tennis.jpg'),
+            image: require('../../../assets/images/category/tennis.jpg'),
         },
         {
             id: 3,
             title: 'Weight-Lifting',
-            image: require('../../assets/images/category/weights.jpg'),
+            image: require('../../../assets/images/category/weights.jpg'),
         },
         {
             id: 1,
             title: 'Running',
-            image: require('../../assets/images/category/running.jpg'),
+            image: require('../../../assets/images/category/running.jpg'),
         },
         {
             id: 2,
             title: 'Tennis',
-            image: require('../../assets/images/category/tennis.jpg'),
+            image: require('../../../assets/images/category/tennis.jpg'),
         },
         {
             id: 3,
             title: 'Weight-Lifting',
-            image: require('../../assets/images/category/weights.jpg'),
+            image: require('../../../assets/images/category/weights.jpg'),
         },
     ];
     const chunkArray = <T,>(arr: T[], size: number): T[][] => {
@@ -228,6 +232,8 @@ export default function Home() {
         },
     ];
 
+    const navigation = useNavigation<DrawerNavigationProp<any>>();
+
     return (
         <View className="flex-1 bg-white">
             <View className="bg-[#08256E] py-3 items-center mt-8">
@@ -240,18 +246,25 @@ export default function Home() {
             </View>
 
             {/* Fixed Logo */}
-            <View className="items-center">
-                <Image
-                    source={require('../../assets/ppluslogo.jpg')}
-                    style={{
-                        width: 100,
-                        height: 60,
-                    }}
-                    resizeMode="contain"
-                />
+
+            <View className="h-16 flex-row items-center px-4 bg-white">
+                {/* Menu Icon Left */}
+                <Pressable onPress={() => navigation.openDrawer()}>
+                    <Ionicons name="menu" size={28} color="#000" />
+                </Pressable>
+
+                {/* Logo Center */}
+                <View className="absolute left-0 right-0 items-center">
+                    <Image
+                        source={require('../../../assets/ppluslogo.jpg')}
+                        style={{
+                            width: 100,
+                            height: 60,
+                        }}
+                        resizeMode="contain"
+                    />
+                </View>
             </View>
-
-
 
             <ScrollView
                 className="flex-1 bg-white"

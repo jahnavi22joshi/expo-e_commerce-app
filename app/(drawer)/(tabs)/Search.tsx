@@ -34,48 +34,48 @@ export default function Search() {
   const banners = [
     {
       id: 1,
-      image: require('../../assets/images/banners/banner1.jpg'),
+      image: require('../../../assets/images/banners/banner1.jpg'),
     },
     {
       id: 2,
-      image: require('../../assets/images/banners/banner2.jpg'),
+      image: require('../../../assets/images/banners/banner2.jpg'),
     },
     {
       id: 3,
-      image: require('../../assets/images/banners/banner3.jpg'),
+      image: require('../../../assets/images/banners/banner3.jpg'),
     },
   ];
   const categories = [
     {
       id: 1,
       title: 'Ankle',
-      image: require('../../assets/images/category/ankle.jpg'),
+      image: require('../../../assets/images/category/ankle.jpg'),
     },
     {
       id: 2,
       title: 'Back',
-      image: require('../../assets/images/category/back.jpg'),
+      image: require('../../../assets/images/category/back.jpg'),
     },
     {
       id: 3,
       title: 'Chest',
-      image: require('../../assets/images/category/chest.jpg'),
+      image: require('../../../assets/images/category/chest.jpg'),
     },
     {
       id: 4,
       title: 'Knee',
-      image: require('../../assets/images/category/knee.jpg'),
+      image: require('../../../assets/images/category/knee.jpg'),
     },
     {
       id: 5,
       title: 'Wrist',
-      image: require('../../assets/images/category/wrist.jpg'),
+      image: require('../../../assets/images/category/wrist.jpg'),
     },
   ];
   const products = [
     {
       id: 1,
-      image: require('../../assets/images/best-sellers/ringPillow.jpg'),
+      image: require('../../../assets/images/best-sellers/ringPillow.jpg'),
       title:
         'Round Ring Pillow',
       rating: 4.6,
@@ -84,7 +84,7 @@ export default function Search() {
     },
     {
       id: 2,
-      image: require('../../assets/images/best-sellers/ankle.jpg'),
+      image: require('../../../assets/images/best-sellers/ankle.jpg'),
       title:
         'Ankle Wrap',
       rating: 4.5,
@@ -93,7 +93,7 @@ export default function Search() {
     },
     {
       id: 3,
-      image: require('../../assets/images/best-sellers/elbow.jpg'),
+      image: require('../../../assets/images/best-sellers/elbow.jpg'),
       title:
         'Designer Elbow Sleeves',
       rating: 4.8,
@@ -102,7 +102,7 @@ export default function Search() {
     },
     {
       id: 4,
-      image: require('../../assets/images/best-sellers/kneesupport.jpg'),
+      image: require('../../../assets/images/best-sellers/kneesupport.jpg'),
       title:
         'Knee Flex Pro | Compression Knee Support with Patella Gel Pad',
       rating: 4.6,
@@ -114,32 +114,32 @@ export default function Search() {
     {
       id: 1,
       title: 'Running',
-      image: require('../../assets/images/category/running.jpg'),
+      image: require('../../../assets/images/category/running.jpg'),
     },
     {
       id: 2,
       title: 'Tennis',
-      image: require('../../assets/images/category/tennis.jpg'),
+      image: require('../../../assets/images/category/tennis.jpg'),
     },
     {
       id: 3,
       title: 'Weight-Lifting',
-      image: require('../../assets/images/category/weights.jpg'),
+      image: require('../../../assets/images/category/weights.jpg'),
     },
     {
       id: 1,
       title: 'Running',
-      image: require('../../assets/images/category/running.jpg'),
+      image: require('../../../assets/images/category/running.jpg'),
     },
     {
       id: 2,
       title: 'Tennis',
-      image: require('../../assets/images/category/tennis.jpg'),
+      image: require('../../../assets/images/category/tennis.jpg'),
     },
     {
       id: 3,
       title: 'Weight-Lifting',
-      image: require('../../assets/images/category/weights.jpg'),
+      image: require('../../../assets/images/category/weights.jpg'),
     },
   ];
   const chunkArray = <T,>(arr: T[], size: number): T[][] => {
@@ -154,87 +154,6 @@ export default function Search() {
 
   const groupedActivities = chunkArray(activities, 2);
 
-  const testimonials = [
-    {
-      id: 1,
-      title: "Significant difference in recovery",
-      description:
-        "p+care orthopedic supports have made a significant difference in my recovery. The quality and comfort are unmatched. I highly recommend their products!",
-      name: "Mr. Rahul Mahant (Cuttack)",
-      rating: 5,
-    },
-    {
-      id: 2,
-      title: "Very comfortable product",
-      description:
-        "The support is excellent and helped me in pain relief. Highly recommended for daily use.",
-      name: "Mrs. Anita Sharma (Delhi)",
-      rating: 5,
-    },
-    {
-      id: 3,
-      title: "Best quality supports",
-      description:
-        "I have tried many brands but p+care is the most comfortable and durable.",
-      name: "Mr. Raj Mehta (Ahmedabad)",
-      rating: 4,
-    },
-    {
-      id: 1,
-      title: "Significant difference in recovery",
-      description:
-        "p+care orthopedic supports have made a significant difference in my recovery. The quality and comfort are unmatched. I highly recommend their products!",
-      name: "Mr. Rahul Mahant (Cuttack)",
-      rating: 5,
-    },
-    {
-      id: 2,
-      title: "Very comfortable product",
-      description:
-        "The support is excellent and helped me in pain relief. Highly recommended for daily use.",
-      name: "Mrs. Anita Sharma (Delhi)",
-      rating: 5,
-    },
-    {
-      id: 3,
-      title: "Best quality supports",
-      description:
-        "I have tried many brands but p+care is the most comfortable and durable.",
-      name: "Mr. Raj Mehta (Ahmedabad)",
-      rating: 4,
-    },
-  ];
-
-  const blogs = [
-    {
-      id: 1,
-      image: 'https://www.shutterstock.com/image-photo/happy-beautiful-young-latin-doctor-260nw-2389637557.jpg',
-      title: 'Managing Knee Pain Effectively',
-      expDesc:
-        'Orthopedic specialists recommend early support and daily exercises to reduce knee strain and improve mobility.',
-    },
-    {
-      id: 2,
-      image: 'https://www.shutterstock.com/image-photo/happy-diverse-female-doctor-patient-260nw-2670524575.jpg',
-      title: 'Recovering from Ankle Injuries',
-      expDesc:
-        'Proper ankle support and controlled movement can help patients recover faster and prevent re-injury.',
-    },
-    {
-      id: 3,
-      image: 'https://thumbs.dreamstime.com/b/cheerful-senior-indian-doctor-shaking-hands-younger-patient-smiling-laughing-discussing-successful-treatment-therapy-success-297650962.jpg',
-      title: 'Tips for Elbow Joint Care',
-      expDesc:
-        'Doctors advise avoiding repetitive stress and using compression support during physical activities.',
-    },
-    {
-      id: 4,
-      image: 'https://www.shutterstock.com/image-photo/indian-asian-male-doctor-walks-260nw-2596976455.jpg',
-      title: 'Protecting Your Joints Daily',
-      expDesc:
-        'Maintaining good posture, staying active, and using orthopedic aids can improve long-term joint health.',
-    },
-  ];
   // const slideAnim = useRef(new Animated.Value(-120)).current;
   const [showModal, setShowModal] = useState(false);
 
@@ -317,7 +236,7 @@ export default function Search() {
         {/* Fixed Logo */}
         <View className="items-center">
           <Image
-            source={require('../../assets/ppluslogo.jpg')}
+            source={require('../../../assets/ppluslogo.jpg')}
             style={{
               width: 100,
               height: 60,

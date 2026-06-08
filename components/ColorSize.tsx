@@ -38,14 +38,21 @@ export default function ColorSize() {
               key={color.id}
               activeOpacity={0.8}
               onPress={() => setSelectedColor(color)}
-              className={`items-center justify-center rounded-full ${isSelected
-                ? "h-[32px] w-[32px] border-2 border-[#3B82F6]"
-                : "h-[32px] w-[32px] border border-[#D1D5DB]"
-                }`}
+              className="items-center justify-center rounded-full"
+              style={{
+                width: 36,
+                height: 36,
+                borderWidth: isSelected ? 2 : 1,
+                borderColor: isSelected ? color.value : "#D1D5DB",
+              }}
             >
               <View
-                style={{ backgroundColor: color.value }}
-                className="h-[20px] w-[20px] rounded-full" //46
+                style={{
+                  backgroundColor: color.value,
+                  width: 24,
+                  height: 24,
+                  borderRadius: 12,
+                }}
               />
             </TouchableOpacity>
           );

@@ -20,6 +20,7 @@ import Divider from "components/Divider";
 import ProductAccordion from "components/ProductAccordion";
 import ProductHighlights from "components/ProductHighlights";
 import ProductRecommCard from "components/ProductRecomCard";
+import { router } from "expo-router";
 
 const { width } = Dimensions.get("window");
 
@@ -214,7 +215,7 @@ export default function ProductDetails() {
                     </View>
                     <ColorSize />
                     <View className="w-[100%] self-center mb-10">
-                        <AppButton title="Add to Cart" type="primary" />
+                        <AppButton title="Add to Cart" type="primary" onPress={() => { router.push("/product/Cart"); }} />
                     </View>
 
                     <View className="flex-1 bg-white">
@@ -276,49 +277,49 @@ export default function ProductDetails() {
                     </View>
                 </View>
 
-                
+
 
             </View>
 
             {/* About Us */}
-                <View className="bg-[#08256E] w-full h-600" >
-                    <View className="mt-12 mb-6 mx-4" >
+            <View className="bg-[#08256E] w-full h-600" >
+                <View className="mt-12 mb-6 mx-4" >
 
-                        <AppText
-                            variant="bold"
-                            className="text-3xl text-white"
-                        >
-                            p+ care
-                        </AppText>
+                    <AppText
+                        variant="bold"
+                        className="text-3xl text-white"
+                    >
+                        p+ care
+                    </AppText>
 
-                        <AppText
-                            variant="regular"
-                            className="text-xl text-gray-400"
-                        >
-                            p+care is an orthopedic and rehabilitation brand committed to enhancing comfort, mobility, and recovery through high-quality supports, braces, and wellness solutions. Designed with care and trusted by professionals, our products help people move better and live healthier every day.
-                        </AppText>
+                    <AppText
+                        variant="regular"
+                        className="text-xl text-gray-400"
+                    >
+                        p+care is an orthopedic and rehabilitation brand committed to enhancing comfort, mobility, and recovery through high-quality supports, braces, and wellness solutions. Designed with care and trusted by professionals, our products help people move better and live healthier every day.
+                    </AppText>
 
 
-                        <View className="flex-row gap-2 mt-3">
-                            <TouchableOpacity className="w-8 h-8 rounded-full bg-[#2A4A95] items-center justify-center">
-                                <AntDesign name="instagram" size={16} color="#fff" />
-                            </TouchableOpacity>
+                    <View className="flex-row gap-2 mt-3">
+                        <TouchableOpacity className="w-8 h-8 rounded-full bg-[#2A4A95] items-center justify-center">
+                            <AntDesign name="instagram" size={16} color="#fff" />
+                        </TouchableOpacity>
 
-                            <TouchableOpacity className="w-8 h-8 rounded-full bg-[#2A4A95] items-center justify-center">
-                                <AntDesign name="youtube" size={16} color="#fff" />
-                            </TouchableOpacity>
-                        </View>
-
-                        <Divider />
-
-                        <AppText
-                            variant="regular"
-                            className="text-s text-gray-500 text-center"
-                        >
-                            @2024 p+care. All rights reserved.
-                        </AppText>
+                        <TouchableOpacity className="w-8 h-8 rounded-full bg-[#2A4A95] items-center justify-center">
+                            <AntDesign name="youtube" size={16} color="#fff" />
+                        </TouchableOpacity>
                     </View>
+
+                    <Divider />
+
+                    <AppText
+                        variant="regular"
+                        className="text-s text-gray-500 text-center"
+                    >
+                        @2024 p+care. All rights reserved.
+                    </AppText>
                 </View>
+            </View>
         </ScrollView>
     );
 }
