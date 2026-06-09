@@ -17,6 +17,7 @@ import PersonalInformationCard from "components/PersonalInformationCard";
 import ShippingAddressCard from "components/ShippingAddressCard";
 import PlaceOrderCard from "components/PlaceOrderCard";
 import FooterCard from "components/FooterCard";
+import { router } from "expo-router";
 
 const CheckoutScreen = () => {
     const [name, setName] = useState("");
@@ -78,7 +79,7 @@ const CheckoutScreen = () => {
                 {/* Place Order */}
                 <PlaceOrderCard
                     onPlaceOrder={() => {
-                        console.log("Place Order");
+                        router.replace('/product/PlaceOrderSuccess')
                     }}
                 />
 

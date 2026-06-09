@@ -341,7 +341,7 @@ export default function Cart() {
           <AppButton title="Proceed to Checkout" type="primary" onPress={() => { router.push('/product/Checkout') }} />
         </View>
         <View className="w-[100%] self-center">
-          <AppButton title="Continue Shopping" type="outline" onPress={() => { }} />
+          <AppButton title="Continue Shopping" type="outline" onPress={() => { router.push('/(drawer)/(tabs)') }} />
         </View>
       </View>
     </SafeAreaView>

@@ -247,7 +247,6 @@ export default function Home() {
             </View>
 
             {/* Fixed Logo */}
-
             <View className="h-16 flex-row items-center px-4 bg-white">
                 {/* Menu Icon Left */}
                 <Pressable onPress={() => navigation.openDrawer()}>
