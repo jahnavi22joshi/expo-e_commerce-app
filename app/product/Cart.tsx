@@ -11,6 +11,7 @@ import { Ionicons } from "@expo/vector-icons";
 import AppText from "components/AppText";
 import Divider from "components/Divider";
 import AppButton from "components/AppButton";
+import { router } from "expo-router";
 
 export default function Cart() {
   const [quantity, setQuantity] = useState(1);
@@ -337,7 +338,7 @@ export default function Cart() {
         </View>
 
         <View className="w-[100%] self-center">
-          <AppButton title="Proceed to Checkout" type="primary" onPress={() => { }} />
+          <AppButton title="Proceed to Checkout" type="primary" onPress={() => { router.push('/product/Checkout') }} />
         </View>
         <View className="w-[100%] self-center">
           <AppButton title="Continue Shopping" type="outline" onPress={() => { }} />
