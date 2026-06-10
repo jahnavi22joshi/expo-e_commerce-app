@@ -6,7 +6,7 @@ import Divider from "./Divider";
 
 const FooterCard = () => {
   return (
-    <View className="bg-[#08256E] w-full mb-5 mt-5">
+    <View className="bg-[#08256E] w-full mb-5">
       <View className="mt-12 mb-6 mx-4">
         <AppText
           variant="bold"

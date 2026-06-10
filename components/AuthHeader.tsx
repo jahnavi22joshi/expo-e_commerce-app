@@ -30,7 +30,7 @@ const AuthHeader: React.FC<AuthHeaderProps> = ({
 
       <AppText
         variant="regular"
-        className={`mt-2 ${subtitleColor} ${
+        className={`${subtitleColor} ${
           center ? "text-center w-[80%] self-center" : ""
         }`}
       >

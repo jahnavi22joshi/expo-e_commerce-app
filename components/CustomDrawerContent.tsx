@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { router } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import AuthHeader from './AuthHeader';
+import SignInCard from './SignInCard';
 
 export default function CustomDrawerContent(props: any) {
   const [expanded, setExpanded] = useState(false);
@@ -35,6 +37,17 @@ export default function CustomDrawerContent(props: any) {
 
   return (
     <DrawerContentScrollView {...props}>
+      <View className='px-5 mb-2'>
+        <AuthHeader
+          title='Menu'
+          subtitle='Explore our Collection'
+        />
+      </View>
+
+      <SignInCard
+        onPress={() => navigation.navigate("SignIn")}
+      />;
+
       {/* Products Accordion */}
       <TouchableOpacity
         onPress={() => setExpanded(!expanded)}
@@ -61,12 +74,12 @@ export default function CustomDrawerContent(props: any) {
               <TouchableOpacity
                 key={item}
                 className="w-1/3 py-2"
-                // onPress={() =>
-                //   router.push({
-                //     pathname: '/categories',
-                //     params: { category: item },
-                //   })
-                // }
+              // onPress={() =>
+              //   router.push({
+              //     pathname: '/categories',
+              //     params: { category: item },
+              //   })
+              // }
               >
                 <Text>{item}</Text>
               </TouchableOpacity>

@@ -10,6 +10,7 @@ import {
 } from "@expo-google-fonts/outfit";
 import "nativewind";
 import '../global.css';
+import React from 'react';
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({

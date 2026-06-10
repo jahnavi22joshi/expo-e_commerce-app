@@ -5,6 +5,8 @@ import AppText from './AppText';
 interface ProductRecommCardProps {
   image: string;
   title: string;
+  description?: string;
+  showDesc?: boolean;
   price: number;
   discountPrice: number;
   onPress?: () => void;
@@ -13,6 +15,8 @@ interface ProductRecommCardProps {
 export default function ProductRecommCard({
   image,
   title,
+  description,
+  showDesc = false,
   price,
   discountPrice,
   onPress,
@@ -36,6 +40,16 @@ export default function ProductRecommCard({
       >
         {title}
       </AppText>
+
+      {showDesc && description && (
+        <AppText
+          variant="regular"
+          className="mt-1 text-[13px] text-[#6B7280]"
+          numberOfLines={2}
+        >
+          {description}
+        </AppText>
+      )}
 
       <View className="mt-2 flex-row items-center">
         <AppText
