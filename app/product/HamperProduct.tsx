@@ -73,7 +73,7 @@ const HamperProduct = () => {
             </AppText>
           </View>
           <AppText className='mt-2 text-black text-2xl' variant='bold'>
-            The Ultimate Comfort Duo
+            The Ultimate Comfort Duo 
           </AppText>
           <AppText className='mt-3 text-gray-600 text-m' variant='regular'>
             Transform Your Seating Experience
@@ -168,6 +168,7 @@ const HamperProduct = () => {
           <AppButton
             title='Add to Card'
             type='primary'
+            onPress={() => {router.push("/product/Cart");}}
           />
 
           <View className='my-8'>

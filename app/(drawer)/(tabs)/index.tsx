@@ -500,7 +500,7 @@ export default function Home() {
                             <FlatList
                                 data={testimonials}
                                 keyExtractor={(item, index) => index.toString()}
-                                renderItem={({ item }) => <TestimonialCard item={item} />}
+                                renderItem={({ item }) => <TestimonialCard item={item} showAuthor={false} />}
                                 showsHorizontalScrollIndicator={false}
                             />
                         </View>
