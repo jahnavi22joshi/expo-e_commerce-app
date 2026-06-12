@@ -1,15 +1,18 @@
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { Entypo, Feather, FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import AppText from 'components/AppText';
 import AuthHeader from 'components/AuthHeader';
 import BulkFeatureBadge from 'components/BulkBadge';
+import Divider from 'components/Divider';
 import FooterCard from 'components/FooterCard';
+import FormInput from 'components/FormInput';
 import ProductAccordion from 'components/ProductAccordion';
 import ResponseCard from 'components/ResponseCard';
 import StatsCard from 'components/StatsCard';
 import StepCard from 'components/StepCard';
 import TestimonialCard from 'components/TestimonialCard';
-import React from 'react';
+import React, { useState } from 'react';
 import { FlatList, Image, ScrollView, TouchableOpacity, View } from 'react-native';
+import * as DocumentPicker from 'expo-document-picker';
 
 export default function BulkOrdering() {
   const DATA = [
@@ -120,6 +123,53 @@ export default function BulkOrdering() {
       rating: 4,
     },
   ];
+  const [companyName, setCompanyName] = useState<string>("");
+  const [businessType, setBusinessType] = useState<string>("");
+
+  const [files, setFiles] = useState<any[]>([]);
+
+  const pickFiles = async () => {
+    try {
+      const result = await DocumentPicker.getDocumentAsync({
+        multiple: true,
+        copyToCacheDirectory: true,
+      });
+
+      if (!result.canceled) {
+        const selectedFiles = result.assets;
+
+        const totalFiles = [...files, ...selectedFiles];
+
+        if (totalFiles.length > 10) {
+          alert('Maximum 10 files allowed');
+          return;
+        }
+
+        setFiles(totalFiles);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const removeFile = (index: number) => {
+    setFiles(files.filter((_, i) => i !== index));
+  };
+
+  const OPTIONS = [
+    'White Labelling',
+    'Bulk Orders',
+    'Corporate Gifting',
+  ];
+  const [selectedItems, setSelectedItems] = useState<string[]>([]);
+
+  const handleSelect = (item: string) => {
+    setSelectedItems((prev) =>
+      prev.includes(item)
+        ? prev.filter((value) => value !== item)
+        : [...prev, item]
+    );
+  };
 
   return (
     <View className="flex-1 bg-white">
@@ -277,6 +327,278 @@ export default function BulkOrdering() {
         </View>
 
         {/* Company Details */}
+        <View
+          className="mx-8 rounded-2xl border border-[#E5E7EB] bg-white py-5 mb-12"
+          style={{
+            shadowColor: '#000',
+            shadowOffset: {
+              width: 0,
+              height: 4,
+            },
+            shadowOpacity: 0.12,
+            shadowRadius: 12,
+            elevation: 5,
+          }}
+        >
+          <View className='flex-row mx-5'>
+            <FontAwesome name="building" size={18} color={'#0e8a7a'} />
+
+            <AppText variant="semiBold" className="ml-2 tracking-[0.1em] uppercase font-semibold text-[#0e8a7a]">
+              Company Information
+            </AppText>
+          </View>
+
+          <View className='px-4 -mb-6'>
+            <Divider />
+          </View>
+
+          <View className='mx-4 px-2'>
+            <FormInput
+              label="Company / Institution Name"
+              placeholder='e.g., NJ Partners'
+              isUpperCaseLabel
+              value={companyName}
+              onChangeText={setCompanyName}
+              required
+            />
+            <FormInput
+              label="Contact Person"
+              placeholder='Your Full Name'
+              isUpperCaseLabel
+              value={companyName}
+              onChangeText={setCompanyName}
+              required
+            />
+            <FormInput
+              label="Email Address"
+              placeholder='nj@gmail.com'
+              isUpperCaseLabel
+              value={companyName}
+              onChangeText={setCompanyName}
+              required
+            />
+            <FormInput
+              label="Phone Number"
+              placeholder='+9189603 70165'
+              isUpperCaseLabel
+              value={companyName}
+              onChangeText={setCompanyName}
+              required
+            />
+          </View>
+
+          <View className='flex-row mx-5 mt-8'>
+            <Feather name="box" size={18} color={'#0e8a7a'} />
+            <AppText variant="semiBold" className="ml-2 tracking-[0.1em] uppercase font-semibold text-[#0e8a7a]">
+              Order Requirements
+            </AppText>
+          </View>
+
+          <View className='px-4 -mb-6'>
+            <Divider />
+          </View>
+
+          <View className='mx-4 px-2'>
+            <FormInput
+              label="Product"
+              placeholder='Select a product'
+              type="dropdown"
+              required
+              isUpperCaseLabel
+              value={businessType}
+              onChangeText={setBusinessType}
+              options={[
+                {
+                  label: "Hospital",
+                  value: "hospital",
+                },
+                {
+                  label: "Clinic",
+                  value: "clinic",
+                },
+                {
+                  label: "Retailer",
+                  value: "retailer",
+                },
+                {
+                  label: "Distributor",
+                  value: "distributor",
+                },
+              ]}
+            />
+            <FormInput
+              label="Estimated Quantity"
+              placeholder='Select quality range'
+              type="dropdown"
+              required
+              isUpperCaseLabel
+              value={businessType}
+              onChangeText={setBusinessType}
+              options={[
+                {
+                  label: "Hospital",
+                  value: "hospital",
+                },
+                {
+                  label: "Clinic",
+                  value: "clinic",
+                },
+                {
+                  label: "Retailer",
+                  value: "retailer",
+                },
+                {
+                  label: "Distributor",
+                  value: "distributor",
+                },
+              ]}
+            />
+          </View>
+
+          <View className='flex-row mx-5 mt-8'>
+            <Entypo name="attachment" size={18} color={'#0e8a7a'} />
+            <AppText variant="semiBold" className="ml-2 tracking-[0.1em] uppercase font-semibold text-[#0e8a7a]">
+              Attachments
+            </AppText>
+          </View>
+
+          <View className='px-4 -mb-6'>
+            <Divider />
+          </View>
+
+          {/* File Attachment logic */}
+          <View className="mt-5  mx-5 mt-8">
+            <TouchableOpacity
+              onPress={pickFiles}
+              className="border-2 border-dashed border-gray-300 rounded-2xl p-5 items-center bg-[#f4f6f9]"
+            >
+              <Entypo name="attachment" size={24} color={'#0e8a7a'} />
+
+              <AppText variant="semiBold" className='mt-4'>
+                Upload Files ({files.length}/10)
+              </AppText>
+              <AppText variant="semiBold" className='mt-2 text-xs text-[#9eaab7] mt-1 text-center'>
+                Drag & drop or click to browse · Max 50 MB per file · Up to 10 files
+              </AppText>
+            </TouchableOpacity>
+
+            <FlatList
+              data={files}
+              keyExtractor={(_, index) => index.toString()}
+              renderItem={({ item, index }) => (
+                <View className="mt-3 flex-row justify-between items-center border border-gray-200 rounded-xl p-3">
+                  <AppText className="flex-1">
+                    {item.name}
+                  </AppText>
+
+                  <TouchableOpacity
+                    onPress={() => removeFile(index)}
+                  >
+                    <AppText className="text-red-500">
+                      Remove
+                    </AppText>
+                  </TouchableOpacity>
+                </View>
+              )}
+            />
+          </View>
+
+          <View className='flex-row mx-5 mt-8'>
+            <Ionicons name="color-palette-outline" size={18} color={'#0e8a7a'} />
+            <AppText variant="semiBold" className="ml-2 tracking-[0.1em] uppercase font-semibold text-[#0e8a7a]">
+              Requirement Type
+            </AppText>
+          </View>
+
+          <View className='px-4 -mb-6'>
+            <Divider />
+          </View>
+
+          {/* Multi selction logic */}
+          <View className="mt-6 gap-3 mx-5">
+            {OPTIONS.map((item) => {
+              const isSelected = selectedItems.includes(item);
+
+              return (
+                <TouchableOpacity
+                  key={item}
+                  activeOpacity={0.8}
+                  onPress={() => handleSelect(item)}
+                  className={`flex-row items-center rounded-2xl border p-4 ${isSelected
+                    ? 'border-[#13b09c] bg-[#e8f8f5]'
+                    : 'border-[#E5E7EB] bg-[#F4F6F9]'
+                    }`}
+                >
+                  <Ionicons
+                    name={
+                      isSelected
+                        ? 'checkmark-circle'
+                        : 'ellipse-outline'
+                    }
+                    size={22}
+                    color={
+                      isSelected
+                        ? '#13b09c'
+                        : '#94A3B8'
+                    }
+                  />
+
+                  <AppText
+                    variant="medium"
+                    className="ml-3 text-[16px] text-[#0F172A]"
+                  >
+                    {item}
+                  </AppText>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+
+
+          <View className='flex-row mx-5 mt-8'>
+            <Ionicons name="chatbox-outline" size={18} color={'#0e8a7a'} />
+            <AppText variant="semiBold" className="ml-2 tracking-[0.1em] uppercase font-semibold text-[#0e8a7a]">
+              Additional Information
+            </AppText>
+          </View>
+
+          <View className='px-4 -mb-6'>
+            <Divider />
+
+            <AppText variant="bold" className="text-xl ml-1.5 mb-6">
+              Describe Your Requirements
+            </AppText>
+          </View>
+
+          <View className='mx-4 rounded-2xl bg-[#f4f6f9] py-4 px-4 mt-5 mb-6'>
+
+            <AppText variant="semiBold" className="text-[#9eaab7] text-base ml-1.5">
+              Tell us about the specific product requriments, certificates needed, distribution network, or any special requirments...
+            </AppText>
+
+          </View>
+
+          <View className="flex-row gap-3 mx-4 px-4">
+            <TouchableOpacity
+              activeOpacity={0.8}
+              className="flex-[6] h-14 bg-[#0d1f3c] rounded-2xl flex-row items-center justify-center"
+            >
+              <AppText
+                variant="regular"
+                className="text-white text-m mr-2"
+              >
+                Submit Bulk Order Inquiry
+              </AppText>
+
+              <Ionicons
+                name="arrow-forward"
+                size={20}
+                color="#FFFFFF"
+              />
+            </TouchableOpacity>
+          </View>
+
+        </View>
 
         {/* How it Works */}
         <View className=" bg-[#081F4D] px-6 py-10">
