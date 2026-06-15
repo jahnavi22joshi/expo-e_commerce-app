@@ -1,9 +1,9 @@
 import { View, Image, FlatList, ScrollView } from 'react-native'
 import React from 'react'
-import AppText from 'components/AppText';
-import NewsCard from 'components/BlogDetailCard';
-import FooterCard from 'components/FooterCard';
-import AuthHeader from 'components/AuthHeader';
+import AppText from 'components/common/AppText';
+import NewsCard from 'components/blog/BlogDetailCard';
+import FooterCard from 'components/common/FooterCard';
+import AuthHeader from 'components/auth/AuthHeader';
 import { router } from 'expo-router';
 
 const DATA = [

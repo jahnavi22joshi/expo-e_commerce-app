@@ -1,11 +1,11 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
-import AuthHeader from 'components/AuthHeader'
+import AuthHeader from 'components/auth/AuthHeader'
 import { TEXT } from 'constants/text'
-import FormInput from 'components/FormInput'
-import AppButton from 'components/AppButton'
-import Divider from 'components/Divider'
-import AuthFooter from 'components/AuthFooter'
+import FormInput from 'components/common/FormInput'
+import AppButton from 'components/common/AppButton'
+import Divider from 'components/common/Divider'
+import AuthFooter from 'components/auth/AuthFooter'
 import { router } from 'expo-router';
 import { validateEmail, validateFullName, validatePassword } from 'utils/validation'
 

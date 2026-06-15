@@ -1,8 +1,8 @@
 import { View, Text, Image, ScrollView } from 'react-native'
 import React from 'react'
-import AppText from 'components/AppText'
-import AuthHeader from 'components/AuthHeader'
-import FooterCard from 'components/FooterCard'
+import AppText from 'components/common/AppText'
+import AuthHeader from 'components/auth/AuthHeader'
+import FooterCard from 'components/common/FooterCard'
 
 export default function BlogsDetails() {
     return (

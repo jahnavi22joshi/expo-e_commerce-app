@@ -31,6 +31,13 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.jahnavij1705.expoecommapp"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "18d0fd51-ca6e-49ec-9b29-63f50898e38c"
       }
     }
   }

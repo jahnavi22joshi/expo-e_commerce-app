@@ -1,11 +1,11 @@
 import { AntDesign } from '@expo/vector-icons';
-import AppButton from 'components/AppButton';
-import AppText from 'components/AppText';
-import AuthHeader from 'components/AuthHeader';
-import BlogCard from 'components/BlogCard';
-import Divider from 'components/Divider';
-import ProductCard from 'components/ProductCard';
-import TestimonialCard from 'components/TestimonialCard';
+import AppButton from 'components/common/AppButton';
+import AppText from 'components/common/AppText';
+import AuthHeader from 'components/auth/AuthHeader';
+import BlogCard from 'components/blog/BlogCard';
+import Divider from 'components/common/Divider';
+import ProductCard from 'components/common/ProductCard';
+import TestimonialCard from 'components/common/TestimonialCard';
 import { TEXT } from 'constants/text';
 import { useFocusEffect } from 'expo-router';
 import React, { useCallback, useEffect, useRef, useState } from 'react';

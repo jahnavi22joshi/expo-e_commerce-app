@@ -1,11 +1,11 @@
 import React from 'react';
-import HamperSlider from 'components/HamperSlider';
+import HamperSlider from 'components/hampers/HamperSlider';
 import { FlatList, Image, ScrollView, View } from 'react-native';
-import FooterCard from 'components/FooterCard';
-import ProductRecommCard from 'components/ProductRecomCard';
-import AppText from 'components/AppText';
-import PromiseWeKeep from 'components/PromiseWeKeep';
-import AuthHeader from 'components/AuthHeader';
+import FooterCard from 'components/common/FooterCard';
+import ProductRecommCard from 'components/common/ProductRecomCard';
+import AppText from 'components/common/AppText';
+import PromiseWeKeep from 'components/hampers/PromiseWeKeep';
+import AuthHeader from 'components/auth/AuthHeader';
 import { router } from 'expo-router';
 
 export default function Hampers() {
@@ -99,7 +99,7 @@ export default function Hampers() {
                 showDesc={true}
                 price={item.price}
                 discountPrice={item.discountPrice}
-                onPress={() => {router.push('/product/HamperProduct')}}
+                onPress={() => { router.push('/product/HamperProduct') }}
               />
             )}
           />

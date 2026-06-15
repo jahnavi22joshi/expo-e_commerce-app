@@ -5,15 +5,15 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import FormInput from 'components/FormInput';
-import AppButton from 'components/AppButton';
-import AuthHeader from 'components/AuthHeader';
-import AuthFooter from 'components/AuthFooter';
-import Divider from 'components/Divider';
+import FormInput from 'components/common/FormInput';
+import AppButton from 'components/common/AppButton';
+import AuthHeader from 'components/auth/AuthHeader';
+import AuthFooter from 'components/auth/AuthFooter';
+import Divider from 'components/common/Divider';
 import { validateEmail, validateFullName, validatePassword } from 'utils/validation';
 import { TEXT } from 'constants/text';
 import { router } from 'expo-router';
-import AppText from 'components/AppText';
+import AppText from 'components/common/AppText';
 
 const SignIn = () => {
   const [email, setEmail] = useState<string>("");
@@ -153,7 +153,8 @@ const SignIn = () => {
             title="Login"
             onPress={() => {
               router.replace('/(tabs)/');
-              handleSubmit()}}
+              handleSubmit()
+            }}
             type="primary"
           />
         </>
@@ -187,7 +188,7 @@ const SignIn = () => {
 
               <AppButton
                 title="Verify OTP"
-               
+
                 type="primary"
               />
             </>

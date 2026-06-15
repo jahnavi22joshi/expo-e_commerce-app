@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomDrawerContent from 'components/CustomDrawerContent';
+import CustomDrawerContent from 'components/drawer/CustomDrawerContent';
 import { Drawer } from 'expo-router/drawer';
 
 export default function DrawerLayout() {

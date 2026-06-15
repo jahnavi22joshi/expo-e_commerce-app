@@ -10,16 +10,16 @@ import {
 } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
-import FeatureItem from "components/FeatureItem";
-import AppText from "components/AppText";
-import ColorSize from "components/ColorSize";
-import AppButton from "components/AppButton";
-import DeliveryLocation from "components/DeliveryLocation";
-import HowToUse from "components/HowToUse";
-import Divider from "components/Divider";
-import ProductAccordion from "components/ProductAccordion";
-import ProductHighlights from "components/ProductHighlights";
-import ProductRecommCard from "components/ProductRecomCard";
+import FeatureItem from "components/product-details/FeatureItem";
+import AppText from "components/common/AppText";
+import ColorSize from "components/common/ColorSize";
+import AppButton from "components/common/AppButton";
+import DeliveryLocation from "components/product-details/DeliveryLocation";
+import HowToUse from "components/product-details/HowToUse";
+import Divider from "components/common/Divider";
+import ProductAccordion from "components/common/ProductAccordion";
+import ProductHighlights from "components/product-details/ProductHighlights";
+import ProductRecommCard from "components/common/ProductRecomCard";
 import { router } from "expo-router";
 
 const { width } = Dimensions.get("window");

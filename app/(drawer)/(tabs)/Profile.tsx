@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { View, TextInput, TouchableOpacity, Image, SafeAreaView } from "react-native";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
-import AppText from "components/AppText";
-import AppButton from "components/AppButton";
+import AppText from "components/common/AppText";
+import AppButton from "components/common/AppButton";
 
 const Profile = () => {
   const [gender, setGender] = useState("Male");
 
   return (
     <SafeAreaView className="flex-1 bg-white">
-      
+
 
       {/* Header */}
       <View className="flex-row items-center px-5 pt-3 mt-10">

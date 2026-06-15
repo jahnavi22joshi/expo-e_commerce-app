@@ -8,9 +8,9 @@ import {
   SafeAreaView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import AppText from "components/AppText";
-import Divider from "components/Divider";
-import AppButton from "components/AppButton";
+import AppText from "components/common/AppText";
+import Divider from "components/common/Divider";
+import AppButton from "components/common/AppButton";
 import { router } from "expo-router";
 
 export default function Cart() {

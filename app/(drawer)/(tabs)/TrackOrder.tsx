@@ -5,9 +5,9 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import AppText from 'components/AppText';
+import AppText from 'components/common/AppText';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import AppButton from 'components/AppButton';
+import AppButton from 'components/common/AppButton';
 
 const Track = () => {
 
@@ -26,7 +26,7 @@ const Track = () => {
           No Order Yet!!
         </AppText>
 
-      
+
 
         {/* Shopping Button */}
         <View className="self-center mb-10" style={{ width: 200 }}>

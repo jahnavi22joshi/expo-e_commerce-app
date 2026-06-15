@@ -8,15 +8,15 @@ import {
     View,
 } from "react-native";
 import { AntDesign, Feather, Ionicons } from "@expo/vector-icons";
-import AppText from "components/AppText";
-import AppButton from "components/AppButton";
-import PaymentMethodCard from "components/PaymentMethodCard";
-import OrderSummaryCard from "components/OrderSummaryCard";
-import Divider from "components/Divider";
-import PersonalInformationCard from "components/PersonalInformationCard";
-import ShippingAddressCard from "components/ShippingAddressCard";
-import PlaceOrderCard from "components/PlaceOrderCard";
-import FooterCard from "components/FooterCard";
+import AppText from "components/common/AppText";
+import AppButton from "components/common/AppButton";
+import PaymentMethodCard from "components/checkout/PaymentMethodCard";
+import OrderSummaryCard from "components/checkout/OrderSummaryCard";
+import Divider from "components/common/Divider";
+import PersonalInformationCard from "components/checkout/PersonalInformationCard";
+import ShippingAddressCard from "components/checkout/ShippingAddressCard";
+import PlaceOrderCard from "components/checkout/PlaceOrderCard";
+import FooterCard from "components/common/FooterCard";
 import { router } from "expo-router";
 
 const CheckoutScreen = () => {

@@ -5,8 +5,8 @@ import {
 } from "react-native";
 import LottieView from "lottie-react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import AppText from "components/AppText";
-import AppButton from "components/AppButton";
+import AppText from "components/common/AppText";
+import AppButton from "components/common/AppButton";
 import { router } from "expo-router";
 
 
@@ -103,7 +103,7 @@ const PlaceOrderSuccess = () => {
           <View className="mt-8">
             <AppButton
               title="Continue Shopping"
-              onPress={() => {router.replace('/(drawer)/(tabs)')}}
+              onPress={() => { router.replace('/(drawer)/(tabs)') }}
             />
           </View>
         </View>

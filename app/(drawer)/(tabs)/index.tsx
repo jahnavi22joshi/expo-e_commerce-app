@@ -1,11 +1,11 @@
 import { AntDesign, Ionicons } from '@expo/vector-icons';
-import AppButton from 'components/AppButton';
-import AppText from 'components/AppText';
-import AuthHeader from 'components/AuthHeader';
-import BlogCard from 'components/BlogCard';
-import Divider from 'components/Divider';
-import ProductCard from 'components/ProductCard';
-import TestimonialCard from 'components/TestimonialCard';
+import AppButton from 'components/common/AppButton';
+import AppText from 'components/common/AppText';
+import AuthHeader from 'components/auth/AuthHeader';
+import BlogCard from 'components/blog/BlogCard';
+import Divider from 'components/common/Divider';
+import ProductCard from 'components/common/ProductCard';
+import TestimonialCard from 'components/common/TestimonialCard';
 import { TEXT } from 'constants/text';
 import { router, useNavigation } from 'expo-router';
 import React, { useState } from 'react';
@@ -22,7 +22,7 @@ import {
 import Carousel from 'react-native-reanimated-carousel';
 import { DrawerActions } from "@react-navigation/native";
 import { DrawerNavigationProp } from '@react-navigation/drawer';
-import FooterCard from 'components/FooterCard';
+import FooterCard from 'components/common/FooterCard';
 
 export default function Home() {
     const [selectedTab, setSelectedTab] = useState('category');
@@ -540,7 +540,7 @@ export default function Home() {
                 {/* About Us */}
                 <FooterCard
                 />
-                
+
             </ScrollView>
         </View>
 

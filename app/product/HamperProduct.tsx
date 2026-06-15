@@ -1,13 +1,13 @@
 import { View, Text, Image, ScrollView, FlatList } from 'react-native'
 import React from 'react'
-import AppText from 'components/AppText'
+import AppText from 'components/common/AppText'
 import { Feather, Octicons } from '@expo/vector-icons'
-import AppButton from 'components/AppButton'
-import Divider from 'components/Divider'
-import AuthHeader from 'components/AuthHeader'
-import ProductRecommCard from 'components/ProductRecomCard'
+import AppButton from 'components/common/AppButton'
+import Divider from 'components/common/Divider'
+import AuthHeader from 'components/auth/AuthHeader'
+import ProductRecommCard from 'components/common/ProductRecomCard'
 import { router } from 'expo-router'
-import FooterCard from 'components/FooterCard'
+import FooterCard from 'components/common/FooterCard'
 
 const HamperProduct = () => {
   const recommProducts = [
@@ -73,7 +73,7 @@ const HamperProduct = () => {
             </AppText>
           </View>
           <AppText className='mt-2 text-black text-2xl' variant='bold'>
-            The Ultimate Comfort Duo 
+            The Ultimate Comfort Duo
           </AppText>
           <AppText className='mt-3 text-gray-600 text-m' variant='regular'>
             Transform Your Seating Experience
@@ -168,7 +168,7 @@ const HamperProduct = () => {
           <AppButton
             title='Add to Card'
             type='primary'
-            onPress={() => {router.push("/product/Cart");}}
+            onPress={() => { router.push("/product/Cart"); }}
           />
 
           <View className='my-8'>
@@ -198,7 +198,7 @@ const HamperProduct = () => {
                 showDesc={true}
                 price={item.price}
                 discountPrice={item.discountPrice}
-              onPress={() => { router.push('/product/BestSellerProductDetails') }}
+                onPress={() => { router.push('/product/BestSellerProductDetails') }}
               />
             )}
           />
